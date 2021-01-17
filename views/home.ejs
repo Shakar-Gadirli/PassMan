@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="home-body">
+    <%- include('partials/header') %>
+    <div class="container p-5">
+        <div class="card">
+            <div class="card-body">
+                    <h1>Welcome back, <%= name %>.</h1>
+                    <br>
+                    <form action="/read" method="POST" class="srch">
+                        <label for="srch" id="search-text">Search passwords</label>
+                        <br>
+                        <input type="text" name="srch" id="search-box">
+                        <input type="submit" value="Search" id="srchbtn">
+                    </form>
+                    <br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

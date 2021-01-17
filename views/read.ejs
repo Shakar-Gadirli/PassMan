@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="read-page">
+    <%- include('partials/header') %>
+    <!-- <p> <%=(typeof alertMsg!='undefined')? alertMsg:''%></p> -->
+    <div class="grid-container">
+    <div class="srch-table item2">
+<table>
+    <thead>
+        <tr>
+            <th>App name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th></th>
+            <th></th>
+        </tr>
+</thead>
+<tbody>
+    <% if (print.length > 0) { %>
+        <% print.forEach((app)=>{ %>
+        <tr>
+            <td><%= app.app_name %></td>
+            <td><%= app.email %></td>
+            <td><%= app.username %></td>
+            <td><%= app.pass %></td>
+            <td><a href='/edit/<%= app.app_name %>'>Edit</a></td>
+            <td><a href='/delete/<%= app.app_name %>'>Delete</a></td>
+        </tr>
+        <% }) %>
+    <% } else { %>
+            <tr> 
+                <!-- <td><%=(typeof alertMsg!='undefined')? alertMsg:''%></td> -->
+                <td style="color: rgb(163, 10, 36);">Could not find result <a href="/home">Go Back</a></td>
+            </tr>
+            <% } %>
+</tbody>
+</table>
+</div>
+</div>
+
+</body>
+</html>
