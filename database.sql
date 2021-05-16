@@ -19,12 +19,3 @@ create table if not exists pass_table(
     ON UPDATE CASCADE
 	ON DELETE CASCADE
 );
-
-select * from users;
-
--- truncate users;
--- TRUNCATE pass_table;
--- drop table pass_table;
--- drop table users;
-
-select * from pass_table;
